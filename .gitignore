@@ -1,5 +1,6 @@
 # Root folders
 .DS_Store
+node_modules
 /dist
 
 
