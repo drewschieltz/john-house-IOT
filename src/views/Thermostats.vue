@@ -1,5 +1,8 @@
 <template>
     <Navigation />
+    <div>
+      <p>This is the thermostats page</p>
+    </div>
 </template>
 
 <script>
