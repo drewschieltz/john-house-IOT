@@ -1,5 +1,8 @@
 <template>
     <Navigation />
+    <div>
+      <p>This is the home page</p>
+    </div>
 </template>
 
 <script>
