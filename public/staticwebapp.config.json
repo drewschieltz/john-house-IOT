@@ -1,0 +1,12 @@
+{
+    "globalHeaders": {
+      "content-security-policy": "default-src https: 'unsafe-eval' 'unsafe-inline'; object-src 'none'; img-src * data: blob: 'unsafe-inline';"
+    },
+    "navigationFallback": {
+      "rewrite": "/",
+      "exclude": ["/img/*.{png,jpg,gif,webp,svg+xml}", "/css/*"]
+    },
+    "mimeTypes": {
+      "custom": "text/html"
+    }
+  }
