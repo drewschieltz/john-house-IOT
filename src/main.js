@@ -1,15 +1,25 @@
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap"
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-import { createApp } from 'vue'
 import axios from 'axios'
 import App from './App.vue'
-import VueAxios from 'vue-axios'
 import router from './router'
+
+import VueAxios from 'vue-axios'
+import packageInfo from '../auth_config.json';
+
+import { createApp } from 'vue'
+import { createAuth0 } from '@auth0/auth0-vue';
 
 
 createApp(App)
     .use(router)
     .use(VueAxios, axios)
-    .use(router)
+    .use(
+        createAuth0({
+          domain: packageInfo.domain,
+          client_id: packageInfo.clientId,
+          redirect_uri: window.location.origin,
+        })
+      )
 .mount('#app')
