@@ -12,6 +12,20 @@
                 </li>
             </ul>
         </div>
+        <ul class="navbar-nav fixed-right navbar-profile">
+            <li v-if="!isAuthenticated && !isLoading" class="nav-item">
+                <button id="qsLoginBtn" class="btn btn-light btn-margin" @click.prevent="login">Login</button>
+            </li>
+            <li class="nav-item navbar-right" v-if="isAuthenticated">
+                <a class="nav-link dropdown-toggle" href="#" id="profileDropDown" data-toggle="dropdown">
+                    <img :src="user.picture" alt="User" class="nav-user-profile rounded-circle" width="50"/>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header">{{ user.name }}</div>
+                    <a id="qsLogoutBtn" href="#" class="dropdown-item" @click.prevent="logout">Logout</a>
+                </div>
+            </li>
+        </ul>
     </nav>
 </template>
 
@@ -46,6 +60,10 @@ export default {
 
 <style>
 
+.navbar {
+    min-height: 85px;
+}
+
 .navbar-toggler {
     margin-left: 5px;
 }
@@ -55,13 +73,17 @@ export default {
 }
 
 .navbar-nav {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 40px;
 }
 
-.mobileAuthNavBar {
-    min-height: 125px;
-    justify-content: space-between;
+.navbar-profile {
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.navbar-nav .dropdown-menu {
+   position: absolute;
+   float: none;
 }
 
 </style>
