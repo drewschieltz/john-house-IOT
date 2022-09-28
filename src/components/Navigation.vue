@@ -4,7 +4,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand mr-auto" href="/">John Maltinksy - IOT Portal</a>
+        <a class="navbar-brand mr-auto" href="/">IOT Portal</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -65,7 +65,7 @@ export default {
 }
 
 .navbar-toggler {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .navbar-brand {
@@ -77,12 +77,14 @@ export default {
 }
 
 .navbar-profile {
-    margin-left: 5px;
-    margin-right: 15px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .navbar-nav .dropdown-menu {
    position: absolute;
+   top: 75px;
    float: none;
 }
 

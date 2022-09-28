@@ -15,17 +15,4 @@
     margin-top: 0px;
 }
 
-ul {
-      list-style-type: none;
-}
-
-@media only screen and (max-width: 806px) {
-    .container{
-      max-width: 100% !important;
-    }
-    #FirstTab{
-      display: none;
-    }    
-}
-
 </style>
