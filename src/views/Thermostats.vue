@@ -1,5 +1,5 @@
 <template>
-    <Navigation />
+    <NavComponent />
     <div>
       <p>This is the thermostats page</p>
     </div>
@@ -7,12 +7,12 @@
 
 <script>
 
-import Navigation from '../components/Navigation.vue'
+import NavComponent from '../components/NavComponent.vue'
 
 export default {
   name: 'Thermostats',
   components: {
-    Navigation
+    NavComponent
   }
 }
 

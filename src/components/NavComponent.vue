@@ -4,7 +4,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand mr-auto" href="/">IOT Portal</a>
+        <a class="navbar-brand mr-auto" href="/">John's IOT Portal</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -30,62 +30,58 @@
 </template>
 
 <script>
+    import { useAuth0 } from '@auth0/auth0-vue';
 
-import { useAuth0 } from '@auth0/auth0-vue';
-
-export default {
-    name: "NavBar",
-    setup() {
-        const auth0 = useAuth0();
-    
-        return {
-            user: auth0.user,
-            isLoading: auth0.isLoading,
-            isAuthenticated: auth0.isAuthenticated,
-    
-            login() {
-                auth0.loginWithRedirect();
-            },
-    
-            logout() {
-                auth0.logout({
-                    returnTo: window.location.origin
-                });
+    export default {
+        name: "NavBar",
+        setup() {
+            const auth0 = useAuth0();
+        
+            return {
+                user: auth0.user,
+                isLoading: auth0.isLoading,
+                isAuthenticated: auth0.isAuthenticated,
+        
+                login() {
+                    auth0.loginWithRedirect();
+                },
+        
+                logout() {
+                    auth0.logout({
+                        returnTo: window.location.origin
+                    });
+                }
             }
         }
-    }
-};
-
+    };
 </script>
 
 <style>
+    .navbar {
+        min-height: 85px;
+    }
 
-.navbar {
-    min-height: 85px;
-}
+    .navbar-toggler {
+        margin-left: 10px;
+    }
 
-.navbar-toggler {
-    margin-left: 10px;
-}
+    .navbar-brand {
+        margin-left: 10px;
+    }
 
-.navbar-brand {
-    margin-left: 10px;
-}
+    .navbar-nav {
+        margin-left: 40px;
+    }
 
-.navbar-nav {
-    margin-left: 40px;
-}
+    .navbar-profile {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
 
-.navbar-profile {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.navbar-nav .dropdown-menu {
-   position: absolute;
-   top: 75px;
-   float: none;
-}
-
+    .navbar-nav .dropdown-menu {
+        position: absolute;
+        top: 75px;
+        float: none;
+    }
 </style>
