@@ -12,17 +12,17 @@
                 </li>
             </ul>
         </div>
-        <ul class="navbar-nav fixed-right navbar-profile">
-            <li v-if="!isAuthenticated && !isLoading" class="nav-item">
-                <button id="qsLoginBtn" class="btn btn-light btn-margin" @click.prevent="login">Login</button>
+        <ul class="navbar-nav fixed-right">
+            <li v-if="!isAuthenticated && !isLoading" class="nav-item user-unauthenticated">
+                <button class="btn btn-light btn-margin login-btn" @click.prevent="login">Login</button>
             </li>
-            <li class="nav-item navbar-right" v-if="isAuthenticated">
+            <li v-if="isAuthenticated" class="nav-item navbar-right user-authenticated">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropDown" data-toggle="dropdown">
                     <img :src="user.picture" alt="User" class="nav-user-profile rounded-circle" width="50"/>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="dropdown-header">{{ user.name }}</div>
-                    <a id="qsLogoutBtn" href="#" class="dropdown-item" @click.prevent="logout">Logout</a>
+                    <a href="#" class="dropdown-item logout-btn" @click.prevent="logout">Logout</a>
                 </div>
             </li>
         </ul>
@@ -33,7 +33,7 @@
     import { useAuth0 } from '@auth0/auth0-vue';
 
     export default {
-        name: "NavBar",
+        name: "NavbarComponent",
         setup() {
             const auth0 = useAuth0();
         
@@ -73,10 +73,16 @@
         margin-left: 40px;
     }
 
-    .navbar-profile {
+    .user-authenticated {
         position: absolute;
         top: 10px;
-        right: 10px;
+        right: 15px;
+    }
+
+    .user-unauthenticated {
+        position: absolute;
+        top: 22.5px;
+        right: 15px;
     }
 
     .navbar-nav .dropdown-menu {

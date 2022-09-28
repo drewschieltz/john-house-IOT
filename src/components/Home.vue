@@ -8,12 +8,6 @@
 
 <script>
     export default {
-        name: "Home Content"
-    };
+        name: "HomeComponent"
+        };
 </script>
-
-<style>
-    .hero {
-        margin-top: 50px;
-    }
-</style>

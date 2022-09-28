@@ -1,17 +1,18 @@
 <template>
-    <NavComponent />
+    <NavbarComponent />
+    <br />
     <HomeComponent />
 </template>
 
 <script>
 
-import NavComponent from '../components/NavComponent.vue'
-import HomeComponent from '../components/HomeComponent.vue'
+import HomeComponent from '../components/Home.vue'
+import NavbarComponent from '../components/Navbar.vue'
 
 export default {
   name: 'Home',
   components: {
-    NavComponent,
+    NavbarComponent,
     HomeComponent
   }
 }
