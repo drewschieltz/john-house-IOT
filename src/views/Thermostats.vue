@@ -1,18 +1,36 @@
 <template>
-    <Navigation />
-    <div>
-      <p>This is the thermostats page</p>
+    <NavbarComponent />
+    <br />
+    <div v-if="!isAuthenticated && !isLoading">
+        <UnauthorizedComponent />
     </div>
+    <div v-else>
+        <ThermostatsComponent />
+    </div>
+    
 </template>
 
 <script>
 
-import Navigation from '../components/Navigation.vue'
+import { useAuth0 } from '@auth0/auth0-vue';
+import NavbarComponent from '../components/Navbar.vue'
+import ThermostatsComponent from '../components/Thermostats.vue'
+import UnauthorizedComponent from '../components/Unauthorized.vue'
 
 export default {
   name: 'Thermostats',
   components: {
-    Navigation
+    NavbarComponent,
+    ThermostatsComponent,
+    UnauthorizedComponent
+  },
+  setup() {
+    const auth0 = useAuth0();
+
+    return {
+      isLoading: auth0.isLoading,
+      isAuthenticated: auth0.isAuthenticated
+    }
   }
 }
 
