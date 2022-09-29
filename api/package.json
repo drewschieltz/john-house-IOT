@@ -1,15 +1,21 @@
 {
-  "name": "api",
+  "name": "john-house-iot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "azure-storage": "^2.10.7",
+    "prettier": "^2.4.1",
+    "trim-newlines": "^4.0.1",
+    "ts": "^0.0.0"
+  },
   "devDependencies": {
-    "@vercel/node": "^2.5.21"
+    "@vercel/node": "^1.12.1",
+    "axios": "^0.24.0"
   }
 }

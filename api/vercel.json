@@ -1,8 +1,0 @@
-{
-    "routes": [
-        {
-            "src": "/v1/users.js",
-            "methods": ["GET"]
-        }
-    ]
-}
