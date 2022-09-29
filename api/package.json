@@ -12,7 +12,8 @@
     "azure-storage": "^2.10.7",
     "prettier": "^2.4.1",
     "trim-newlines": "^4.0.1",
-    "ts": "^0.0.0"
+    "ts": "^0.0.0",
+    "vue": "^3.2.40"
   },
   "devDependencies": {
     "@vercel/node": "^1.12.1",
