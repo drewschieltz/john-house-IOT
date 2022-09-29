@@ -1,7 +1,4 @@
-import { VercelRequest, VercelResponse } from "@vercel/node";
-
-
-export default (req: VercelRequest, res: VercelResponse) => {
+export default (req, res) => {
     var azure = require('azure-storage');
     var azureTS = azure.createTableService('johnhouseiot', 'oWmLX4e/1sx5IpoiVC7j6ceDseKxxKwWFJJsL7ZMxg15p7UhUJ7oueyHBLRKvOYPls9GXs7Lza84+AStbF85IQ==');
 
