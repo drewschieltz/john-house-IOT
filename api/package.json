@@ -1,21 +1,15 @@
 {
-  "name": "john-house-iot",
+  "name": "api",
   "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@vue/cli-service": "^5.0.8",
-    "azure-storage": "^2.10.7",
-    "prettier": "^2.4.1",
-    "trim-newlines": "^4.0.1",
-    "ts": "^0.0.0",
-    "vercel": "^28.4.5",
-    "vue": "^3.2.40"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@vercel/node": "^1.12.1",
-    "axios": "^0.24.0"
+    "@vercel/node": "^2.5.21"
   }
 }
