@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vue/cli-service": "^5.0.8",
     "azure-storage": "^2.10.7",
     "prettier": "^2.4.1",
     "trim-newlines": "^4.0.1",
