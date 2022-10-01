@@ -21,5 +21,5 @@ createApp(App)
           client_id: packageInfo.clientId,
           redirect_uri: window.location.origin,
         })
-      )
+    )
 .mount('#app')
