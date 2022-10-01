@@ -28,12 +28,18 @@ module.exports = async function (context, req) {
     }
 
     let entitiesIter = client.listEntities({
-        queryOptions: { filter: queryFilter, }
+        queryOptions: { filter: queryFilter }
     });
 
-    let i = 1;
+    let responses = [];
     for await (const entity of entitiesIter) {
-        console.log(`Entity${i}: PartitionKey: ${entity.partitionKey} RowKey: ${entity.rowKey}`);
-        i++;
+        let user = {
+            'etag': entity.etag,
+            'emailAddress': entity.rowKey
+        }
+
+        responses.push(user)
     }
+
+    context.res.json(JSON.stringify(responses))
 }
