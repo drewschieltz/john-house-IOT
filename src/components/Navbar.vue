@@ -47,9 +47,7 @@
                 },
         
                 logout() {
-                    auth0.logout({
-                        returnTo: window.location.origin
-                    });
+                    auth0.logout({ returnTo: window.location.origin });
                 }
             }
         }
