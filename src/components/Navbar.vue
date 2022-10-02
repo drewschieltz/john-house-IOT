@@ -13,16 +13,13 @@
             </ul>
         </div>
         <ul class="navbar-nav fixed-right">
-            <li v-if="!isAuthenticated && !isLoading" class="nav-item user-unauthenticated">
-                <button class="btn btn-light btn-margin login-btn" @click.prevent="login">Login</button>
-            </li>
-            <li v-if="isAuthenticated" class="nav-item navbar-right user-authenticated">
+            <li class="nav-item navbar-right user-authenticated">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropDown" data-toggle="dropdown">
-                    <img :src="user.picture" alt="User" class="nav-user-profile rounded-circle" width="50"/>
+                    <img :src="$auth.user.picture" alt="User" class="nav-user-profile rounded-circle" width="50"/>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <div class="dropdown-header">{{ user.name }}</div>
-                    <a href="#" class="dropdown-item logout-btn" @click.prevent="logout">Logout</a>
+                    <div class="dropdown-header">{{ $auth.user.name }}</div>
+                    <a href="#" class="dropdown-item logout-btn" @click="$auth.logout()">Logout</a>
                 </div>
             </li>
         </ul>
@@ -30,28 +27,9 @@
 </template>
 
 <script>
-    import { useAuth0 } from '@auth0/auth0-vue';
-
-    export default {
-        name: "NavbarComponent",
-        setup() {
-            const auth0 = useAuth0();
-        
-            return {
-                user: auth0.user,
-                isLoading: auth0.isLoading,
-                isAuthenticated: auth0.isAuthenticated,
-        
-                login() {
-                    auth0.loginWithRedirect();
-                },
-        
-                logout() {
-                    auth0.logout({ returnTo: window.location.origin });
-                }
-            }
-        }
-    };
+export default {
+    name: "NavbarComponent",
+};
 </script>
 
 <style>
