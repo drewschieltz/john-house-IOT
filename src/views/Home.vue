@@ -6,8 +6,8 @@
 
 <script>
 
-import HomeComponent from '../components/Home.vue'
-import NavbarComponent from '../components/Navbar.vue'
+import HomeComponent from '@/components/Home.vue'
+import NavbarComponent from '@/components/Navbar.vue'
 
 export default {
   name: 'Home',
