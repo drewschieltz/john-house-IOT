@@ -1,15 +1,12 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-
 import Home from '@/views/Home.vue'
 import Thermostats from '@/views/Thermostats.vue'
 import AuthCallback from '@/views/AuthCallback.vue'
 
+import { createRouter, createWebHistory } from 'vue-router'
 
-Vue.use(Router)
 
-const router = new Router({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -17,14 +14,14 @@ const router = new Router({
       component: Home
     },
     {
-      path: '/thermostats',
-      name: 'thermostats',
-      component: Thermostats
-    },
-    {
       path: '/authCB',
       name: 'authCB',
       component: AuthCallback
+    },
+    {
+      path: '/thermostats',
+      name: 'thermostats',
+      component: Thermostats
     }
   ]
 })

@@ -1,6 +1,7 @@
-import Vue from 'vue'
 import auth0 from 'auth0-js'
 import authInfo from '@/auth_config.json'
+
+import { createApp } from 'vue'
 
 
 // exchange the object with your own from the setup step above.
@@ -13,7 +14,7 @@ let webAuth = new auth0.WebAuth({
     scope: 'openid profile'
 })
 
-let auth = new Vue({
+let auth = createApp({
   computed: {
     token: {
       get: function() { return localStorage.getItem('id_token') },
@@ -72,6 +73,4 @@ let auth = new Vue({
   }
 })
 
-export default {
-  install: function(Vue) { Vue.prototype.$auth = auth }
-}
+export default auth
