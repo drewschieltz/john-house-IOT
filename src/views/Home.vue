@@ -1,20 +1,26 @@
 <template>
-    <NavbarComponent />
-    <br />
-    <HomeComponent />
+  <div>
+    <hero />
+    <hr />
+    <home-content />
+  </div>
 </template>
 
 <script>
-
-import HomeComponent from '@/components/Home.vue'
-import NavbarComponent from '@/components/Navbar.vue'
+import Hero from "../components/Hero";
+import HomeContent from "../components/HomeContent";
 
 export default {
-  name: 'Home',
+  name: "home",
   components: {
-    NavbarComponent,
-    HomeComponent
-  }
-}
-
+    Hero,
+    HomeContent,
+  },
+};
 </script>
+
+<style lang="css" scoped>
+.next-steps .fa-link {
+    margin-right: 5px;
+}
+</style>
