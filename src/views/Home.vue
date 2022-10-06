@@ -1,26 +1,14 @@
 <template>
   <div>
-    <hero />
-    <hr />
-    <home-content />
+    <HomeComponent />
   </div>
 </template>
 
 <script>
-import Hero from "../components/Hero";
-import HomeContent from "../components/HomeContent";
+import HomeComponent from '@/components/Home.vue'
 
 export default {
-  name: "home",
-  components: {
-    Hero,
-    HomeContent,
-  },
+  name: "Home",
+  components: {  HomeComponent }
 };
 </script>
-
-<style lang="css" scoped>
-.next-steps .fa-link {
-    margin-right: 5px;
-}
-</style>
